@@ -5,6 +5,17 @@ are synced into `~/.cursor/skills/` and `~/.claude/skills/` so every agent I use
 (Cursor Desktop and CLI, Claude Code, and Cloud Agents via Cursor's Sync Skills). Everything here
 is generic workflow guidance — no business logic, no secrets.
 
+Install:
+
+```bash
+git clone https://github.com/jennypavlova/agent_skills.git ~/agent-skills
+~/agent-skills/install.sh      # copies each skill into ~/.cursor/skills/ and ~/.claude/skills/
+```
+
+Re-run `./install.sh` after every `git pull`. For Cloud Agents, enable Cursor Settings → Agents
+→ "Sync Skills for Cloud Agents" once. The script copies rather than symlinks because Cursor's
+sync moves the contents of `~/.cursor/skills/` into managed storage.
+
 Layout:
 
 - `skills/generic/`  — workflow skills that apply to any repository (repo orientation, git
