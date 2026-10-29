@@ -1,17 +1,21 @@
-# agent-skills (scaffold, not yet a git repo)
+# agent-skills
 
-Personal agent skills to be synced later into `~/.cursor/skills/` and `~/.claude/skills/`.
-Nothing here is linked, committed, or installed yet.
+Personal agent skills for Cursor and Claude Code. The repo is the source of truth; its skills
+are synced into `~/.cursor/skills/` and `~/.claude/skills/` so every agent I use picks them up
+(Cursor Desktop and CLI, Claude Code, and Cloud Agents via Cursor's Sync Skills). Everything here
+is generic workflow guidance — no business logic, no secrets.
 
 Layout:
 
-- `skills/generic/`  — workflow skills that apply to any repository
-- `skills/kibana/`   — skills specific to elastic/kibana
+- `skills/generic/`  — workflow skills that apply to any repository (code review, feature
+  development, bug fixing, how to write skills)
+- `skills/kibana/`   — skills specific to elastic/kibana (issue creation, type checking, …)
 
-Each skill is a folder with a `SKILL.md`. The frontmatter `name` must equal the folder name.
-All files are placeholders (`TODO`) awaiting real content.
+Each skill is a folder with a `SKILL.md`. The frontmatter `name` must equal the folder name and
+`description` states what the skill does and when to use it. Files whose body is `TODO` are
+placeholders waiting for content. See `skills/generic/skill-creation/` for the conventions.
 
-Note on the type-check skill: no existing SKILL.md for the oblt type-check CLI was found in the
-Kibana checkout. The source material is the Cursor user rule ("always use
+Note on `kibana-oblt-type-check`: no existing `SKILL.md` for the observability type-check CLI
+exists in the Kibana checkout. The skill is written from my Cursor user rule ("always use
 `x-pack/solutions/observability/packages/kbn-ts-type-check-oblt-cli/type_check.js`") and that
-package's `README.md`. `skills/kibana/kibana-oblt-type-check/` is the placeholder for it.
+package's `README.md`.
