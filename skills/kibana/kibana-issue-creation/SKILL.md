@@ -24,3 +24,16 @@ When creating a GitHub issue in elastic/kibana for the team:
    - `bug` — it is a bug.
 
    Otherwise do **not** set an issue type unless the caller specifically asks for one.
+
+5. **Team project and status.** Add every issue to the **OBS Signals Traces** project
+   <https://github.com/orgs/elastic/projects/1829> (confirm the project name on the page; it is
+   private to the org) and set its status to **Backlog** — new issues are not prioritised yet.
+   OAPM UI issues go to this same project.
+
+   ```bash
+   gh project item-add 1829 --owner elastic --url <issue-url>        # needs the `project` scope
+   gh project item-edit --project-id <id> --id <item-id> --field-id <status-field-id> --single-select-option-id <backlog-option-id>
+   ```
+
+   Resolve the ids once with `gh project view 1829 --owner elastic --format json` and
+   `gh project field-list 1829 --owner elastic`.
