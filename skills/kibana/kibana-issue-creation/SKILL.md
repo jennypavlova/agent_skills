@@ -37,3 +37,13 @@ When creating a GitHub issue in elastic/kibana for the team:
 
    Resolve the ids once with `gh project view 1829 --owner elastic --format json` and
    `gh project field-list 1829 --owner elastic`.
+
+6. **Project fields (OBS Signals Traces project only, never other projects).** After adding
+   the item, set these project properties:
+   - **Product** → `APM UI`, always.
+   - **Work stream** → the issue's work stream; for bugs, tech debt, or anything not tied to a
+     specific work stream use the `KTLO` option (keep the lights on). Pick the exact option
+     name from the field's dropdown (`gh project field-list`), do not guess.
+   - **Issue type** → `KTLO` as well (same rule).
+
+   Set them with `gh project item-edit … --single-select-option-id <option-id>` per field.
