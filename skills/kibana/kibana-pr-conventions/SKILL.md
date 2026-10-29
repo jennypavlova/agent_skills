@@ -1,6 +1,6 @@
 ---
 name: kibana-pr-conventions
-description: Open and finalise pull requests in elastic/kibana: title, description sections (summary, testing, screenshots), labels (team from CODEOWNERS, release_note, backport, version), assignee, and issue linking. Use when creating, describing, or labelling a Kibana PR, or when asked about Kibana release-note or backport rules.
+description: Open and finalise pull requests in elastic/kibana: title, description sections (summary, testing, screenshots), labels (Team:obs-signals-traces, release_note, backport, version), assignee, and issue linking. Use when creating, describing, or labelling a Kibana PR, or when asked about Kibana release-note or backport rules.
 ---
 
 # Kibana PR conventions
@@ -20,10 +20,10 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
    are affected (see `bug-fix`), then add `backport:version` **plus** a `vX.Y.Z` label for each
    affected version (and the target `main` version). If the auto-backport fails:
    `node scripts/backport --sha <sha> --branch <x.y>`.
-3. **Team label from CODEOWNERS.** Look up the owner of the touched paths in `.github/CODEOWNERS`
-   and apply the matching label: `@elastic/<name>-team` → `Team:<name>`
-   (e.g. `@elastic/obs-signals-traces-team` → `Team:obs-signals-traces`). Verify the exact label
-   with `gh label list --repo elastic/kibana --search <name>`.
+3. **Team label: always `Team:obs-signals-traces`.** Apply it to every PR I open, regardless
+   of the touched paths. If `.github/CODEOWNERS` lists other teams for those paths, their
+   `Team:<name>` labels may be added as extras, but they are optional; the required one is
+   always `Team:obs-signals-traces`.
 4. **Assign the PR to `jennypavlova`.** Every time.
 5. **Link the related issue** whenever one exists: `Closes #<n>` (or the full URL) as the first
    line of the summary. Multiple issues → one `Closes` line each.
@@ -50,7 +50,7 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
 
 | Kind | Label(s) |
 |---|---|
-| Team | `Team:<name>` from CODEOWNERS (rule 3) |
+| Team | `Team:obs-signals-traces` always; other CODEOWNERS teams optional (rule 3) |
 | Release note | one `release_note:*` (rule 1) |
 | Backport | `backport:skip` or `backport:version` + `vX.Y.Z` per version (rule 2) |
 | Version | `vX.Y.Z` of the `main` release the change ships in |
