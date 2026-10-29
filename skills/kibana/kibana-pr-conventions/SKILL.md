@@ -29,12 +29,15 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
    line of the summary. Multiple issues → one `Closes` line each.
 6. **UI changes → trigger the team deployment.** When the PR involves UI changes that need
    manual verification (e.g. adding a new button, a new or changed component, flyout, chart,
-   layout, copy), add a PR comment after opening the PR with exactly this text and nothing
-   else:
+   layout, copy), add a PR comment with exactly this text and nothing else:
 
    ```text
    /OBLT-deploy
    ```
+
+   **Timing:** post it right after the draft PR is opened (PRs start as drafts, see § Before
+   marking ready), not after marking it ready for review. The trigger works on draft PRs, so
+   deploy first and continue with the rest of the checklist while it builds.
 
    This deploys the branch to the team's observability environment so the change can be tested
    manually with real traces data. Use judgment: if the change is not really specific to
@@ -72,9 +75,10 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
 
 ## Before marking ready
 
-- Open as draft (`gh pr create --draft`, see repo skill `kbn-github`); mark ready when CI is
-  green and the description is complete.
-- Run the checks from `feature-development` / `bug-fix` and `kibana-oblt-type-check` first.
-- UI change? Confirm the `/OBLT-deploy` comment was posted (rule 6) and link the deployed
-  environment in the testing section if useful.
+- Open as draft (`gh pr create --draft`, see repo skill `kbn-github`).
+- UI change? Post the `/OBLT-deploy` comment immediately on the draft (rule 6), then carry on;
+  link the deployed environment in the testing section if useful.
+- Run the checks from `feature-development` / `bug-fix` and `kibana-oblt-type-check`.
+- Mark ready for review when CI is green, the description is complete, and the manual UI check
+  on the deployment (if any) is done.
 - Branch older than 48 h vs. upstream cannot merge: comment `@elasticmachine merge upstream`.
