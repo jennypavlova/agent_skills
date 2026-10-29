@@ -27,6 +27,17 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
 4. **Assign the PR to `jennypavlova`.** Every time.
 5. **Link the related issue** whenever one exists: `Closes #<n>` (or the full URL) as the first
    line of the summary. Multiple issues → one `Closes` line each.
+6. **Visual / UI changes → trigger the team deployment.** Decide from the issue and PR context
+   whether the change is visual or needs manual UI verification (new or changed components,
+   layout, styling, flyouts, charts, copy). If so, after opening the PR add a PR comment with
+   exactly this text and nothing else:
+
+   ```text
+   /OBLT-deploy
+   ```
+
+   This deploys the branch to the team's environment for manual UI checking. Skip it for
+   server-only or non-visual changes.
 
 ## Title
 
@@ -61,4 +72,6 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
 - Open as draft (`gh pr create --draft`, see repo skill `kbn-github`); mark ready when CI is
   green and the description is complete.
 - Run the checks from `feature-development` / `bug-fix` and `kibana-oblt-type-check` first.
+- Visual change? Confirm the `/OBLT-deploy` comment was posted (rule 6) and link the deployed
+  environment in the testing section if useful.
 - Branch older than 48 h vs. upstream cannot merge: comment `@elasticmachine merge upstream`.
