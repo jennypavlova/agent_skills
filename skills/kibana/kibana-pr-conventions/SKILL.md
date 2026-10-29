@@ -1,6 +1,6 @@
 ---
 name: kibana-pr-conventions
-description: Open and finalise pull requests in elastic/kibana: title, description sections (summary, testing, screenshots), labels (Team:obs-signals-traces, release_note, backport, version), assignee, and issue linking. Use when creating, describing, or labelling a Kibana PR, or when asked about Kibana release-note or backport rules.
+description: "Open and finalise pull requests in elastic/kibana: title, description sections (summary, testing, screenshots), labels (Team:obs-signals-traces, release_note, backport, version), assignee, and issue linking. Use when creating, describing, or labelling a Kibana PR, or when asked about Kibana release-note or backport rules."
 ---
 
 # Kibana PR conventions

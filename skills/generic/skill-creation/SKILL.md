@@ -90,6 +90,10 @@ description: <what it does> + <when to use it, phrased with the words a user wou
 - No invented rules: anything not dictated or clearly implied by the repo is left out or marked
   as a hint to verify.
 - `name` equals the folder name; `description` names the action, trigger, and scope.
+- Frontmatter is valid YAML: wrap `description` in double quotes whenever it contains `: `,
+  `#`, or starts with a special character (unquoted colons break GitHub rendering and skill
+  loaders). Verify with
+  `python3 -c "import yaml,sys; yaml.safe_load(open(sys.argv[1]).read().split('---')[1])" SKILL.md`.
 - Wording is repo-agnostic in `generic/`, and repo values in `kibana/` are look-ups or
   "re-verify" hints.
 - Placeholders (`TODO`) only when content is genuinely pending; a placeholder keeps the

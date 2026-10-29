@@ -1,6 +1,6 @@
 ---
 name: feature-development
-description: End-to-end workflow for implementing a feature in any repository: plan first, type-safe implementation, unit/integration/e2e tests per repo convention, run all checks, internal self-review folded into the feature commits, and a concise PR description. Use whenever asked to implement, build, or add a feature or sizeable change.
+description: "End-to-end workflow for implementing a feature in any repository: plan first, type-safe implementation, unit/integration/e2e tests per repo convention, run all checks, internal self-review folded into the feature commits, and a concise PR description. Use whenever asked to implement, build, or add a feature or sizeable change."
 ---
 
 # Feature development

@@ -1,6 +1,6 @@
 ---
 name: bug-fix
-description: Workflow for fixing a reported bug in any repository: understand, reproduce, confirm, investigate (what changed last, affected versions, components, data), fix with regression tests, keep existing tests untouched, and open a PR with affected versions, backport handling, and issue linking. Use whenever asked to fix a bug, defect, regression, or incident.
+description: "Workflow for fixing a reported bug in any repository: understand, reproduce, confirm, investigate (what changed last, affected versions, components, data), fix with regression tests, keep existing tests untouched, and open a PR with affected versions, backport handling, and issue linking. Use whenever asked to fix a bug, defect, regression, or incident."
 ---
 
 # Bug fix
