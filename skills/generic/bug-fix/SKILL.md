@@ -53,7 +53,19 @@ Do not start fixing until the bug is confirmed; if it cannot be confirmed, repor
 - Do not modify existing tests directly to make them pass; that can hide other issues. Add new
   tests instead. If an existing test is genuinely wrong, call it out separately with reasoning.
 
-## 7. Prepare the PR
+## 7. Internal review of your own work
+
+Before opening the PR, on every fix:
+
+- Review the fix and its tests as a reviewer would (run the `code-review` skill on the diff or
+  an equivalent self-review): root cause really addressed, edge cases, no unrelated changes,
+  tests prove the regression is gone.
+- Run the repo's checks: tests, type check, lint, repo-specific checks.
+- Fold any findings into the existing commits or a refactoring commit. Never add a separate
+  "review" or "address review" commit — this is an internal review of your own work, not an
+  external one.
+
+## 8. Prepare the PR
 
 - If the software is versioned, state the affected versions and the version in which it will be
   fixed. If the target version is unknown, ask the user which version to target.
@@ -66,7 +78,7 @@ Do not start fixing until the bug is confirmed; if it cannot be confirmed, repor
   process requirements. Generic PR-creation guidance (see `feature-development` § PR description)
   covers the rest: concise summary, before/after, testing steps.
 
-## 8. Run tests before pushing
+## 9. Run tests before pushing
 
 Run the full relevant test suites, type checks, and lint before every push, not only before the
 first commit.
@@ -78,6 +90,7 @@ first commit.
 - [ ] Bug confirmed with evidence
 - [ ] Root cause found; last change / version diff checked; conclusion written
 - [ ] Fix plus regression / edge-case tests; existing tests untouched and passing
+- [ ] Self-reviewed; findings folded into existing commits or a refactoring commit
 - [ ] Affected and target versions stated; backport handled per repo flow
 - [ ] PR linked to the issue; repo PR conventions followed
 - [ ] All tests and checks run before pushing
