@@ -32,7 +32,7 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
    layout, copy), add a PR comment with exactly this text and nothing else:
 
    ```text
-   /OBLT-deploy
+   /oblt-deploy
    ```
 
    **Timing:** post it right after the draft PR is opened (PRs start as drafts, see § Before
@@ -76,7 +76,7 @@ Sources: `.github/PULL_REQUEST_TEMPLATE.md`, `docs/extend/contributing/workflow/
 ## Before marking ready
 
 - Open as draft (`gh pr create --draft`, see repo skill `kbn-github`).
-- UI change? Post the `/OBLT-deploy` comment immediately on the draft (rule 6), then carry on;
+- UI change? Post the `/oblt-deploy` comment immediately on the draft (rule 6), then carry on;
   link the deployed environment in the testing section if useful.
 - Run the checks from `feature-development` / `bug-fix` and `kibana-oblt-type-check`.
 - Mark ready for review when CI is green, the description is complete, and the manual UI check
